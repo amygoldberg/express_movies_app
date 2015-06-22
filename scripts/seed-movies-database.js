@@ -1,5 +1,3 @@
-// In the first phase of this project, you should create a Mongoose schema and model object according to this description, and some database seed data to verify that the schema and validation work.
-
 // 1 require modules
 var async = require('async');
 var mongoose = require('mongoose');
@@ -17,13 +15,13 @@ var Movie = require('../lib/movies.js');
 
 // 4 start seeding data for the movies collection - create a movie for 'mean girls'
 var createMeanGirls = function(done) {
-  Contact.create({
+  Movie.create({
     title: 'Mean Girls',
     productionYear: '2004',
     director: 'Mark Waters',
     actor: 'Lindsay Lohan',
     genre: 'comedy',
-    rating: 'PG-13',
+    rating: 'pg13',
     reviews: [{
       title: 'Favorite movie',
       reviewer: 'Amy Goldberg',
@@ -35,13 +33,13 @@ var createMeanGirls = function(done) {
 };
 
 var createGoodWillHunting = function(done) {
-  Contact.create({
+  Movie.create({
     title: 'Good Will Hunting',
     productionYear: '1997',
     director: 'Gus Van Sant',
     actor: 'Matt Damon',
-    genre: 'drama',
-    rating: 'R',
+    // genre: 'drama',
+    // rating: 'r',
     reviews: [{
       title: 'Classic movie',
       reviewer: 'Lindsey Cashman',
@@ -53,13 +51,13 @@ var createGoodWillHunting = function(done) {
 };
 
 var createBigDaddy = function(done) {
-  Contact.create({
+  Movie.create({
     title: 'Big Daddy',
     productionYear: '1999',
     director: 'Dennis Dugan',
     actor: 'Adam Sandler',
-    genre: 'comedy',
-    rating: 'PG-13',
+    // genre: 'comedy',
+    // rating: 'pg13',
     reviews: [{
       title: 'Hilarious movie',
       reviewer: 'Dennis Quackenbush',
@@ -78,9 +76,9 @@ async.series([
   ],
 
   // 6 fire the function that will be invoked when the above functions are done
-  function(err) {
-    if (err) {
-      console.error(err);
+  function(error) {
+    if (error) {
+      console.error(error);
     }
 
     // 7 drop the connection
